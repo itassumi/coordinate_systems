@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Візуалізація GPS вимірювань</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Візуалізація даних GPS</h1>
+
+    <section>
+        <h2>Керування емулятором</h2>
+        <label>Швидкість супутника (км/год): <input type="number" id="satelliteSpeed" value="100"></label>
+        <label>Швидкість об'єкта (км/год): <input type="number" id="objectSpeed" value="10"></label>
+        <button onclick="updateConfig()">Оновити параметри</button>
+    </section>
+
+    <section>
+        <h2>Графік</h2>
+        <canvas id="myChart" width="800" height="600"></canvas>
+    </section>
+
+    <section>
+        <h2>Дані в реальному часі</h2>
+        <div id="data"></div>
+    </section>
+</body>
+</html>
