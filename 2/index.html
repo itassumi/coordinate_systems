@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📡 Візуалізація даних радару</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📡 Візуалізація вимірювань радару</h1>
+            <p>Відображення цілей у реальному часі в полярних координатах</p>
+        </header>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="status-box">
+                    <h3>📡 Статус підключення</h3>
+                    <div id="status">⏳ Підключення до радару...</div>
+                    <button id="connectBtn">🔄 Перепідключити</button>
+                </div>
+
+                <div class="control-box">
+                    <h3>⚙️ Налаштування радару</h3>
+                    <div class="form-group">
+                        <label for="measurementsPerRotation">Вимірювань на оберт:</label>
+                        <input type="number" id="measurementsPerRotation" value="360">
+                    </div>
+                    <div class="form-group">
+                        <label for="rotationSpeed">Швидкість обертання (RPM):</label>
+                        <input type="number" id="rotationSpeed" value="60">
+                    </div>
+                    <div class="form-group">
+                        <label for="targetSpeed">Швидкість цілей (км/год):</label>
+                        <input type="number" id="targetSpeed" value="100">
+                    </div>
+                    <button id="updateConfigBtn">💾 Оновити параметри</button>
+                </div>
+
+                <div class="info-box">
+                    <h3>📊 Останні дані</h3>
+                    <p>Кількість цілей: <span id="targetCount">0</span></p>
+                    <p>Останній кут: <span id="lastAngle">-</span>°</p>
+                    <p>Останній час: <span id="lastTime">-</span> с</p>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div id="radarPlot"></div>
+                <div class="legend">
+                    <div class="legend-title">🎨 Потужність сигналу:</div>
+                    <div class="legend-items">
+                        <div><span class="legend-color high-power"></span> Висока (> 0.7)</div>
+                        <div><span class="legend-color medium-power"></span> Середня (0.3-0.7)</div>
+                        <div><span class="legend-color low-power"></span> Низька (< 0.3)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
